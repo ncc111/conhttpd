@@ -7,8 +7,6 @@ LABEL version="1.0"
 LABEL description="Descriptions"
 MAINTAINER IBM LBS <ibm@ibm.com>
 
-ENV VAR=UAT
-
 # Allows child images to inject their own content into DocumentRoot
 ONBUILD COPY src/ ${DOCROOT}/
 ONBUILD VAR=PRD_ONBUILD
