@@ -14,4 +14,4 @@ ONBUILD VAR=PRD_ONBUILD
 USER root
 
 # Launch httpd
-CMD bash -c "while true; do echo date; echo $VAR; sleep 5; done"
+CMD bash -c "while true; do date; echo $VAR; sleep 5; done"
