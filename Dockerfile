@@ -1,11 +1,8 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.0
 
-RUN yum install -y --disableplugin=subscription-manager httpd
-RUN yum clean all --disableplugin=subscription-manager -y 
+RUN yum install -y --disableplugin=subscription-manager httpd && yum clean all --disableplugin=subscription-manager -y 
 
-LABEL version="1.0"
-LABEL description="Descriptions"
-MAINTAINER IBM LBS <ibm@ibm.com>
+LABEL version="1.0"description="Descriptions" MAINTAINER IBM LBS <ibm@ibm.com>
 
 # Allows child images to inject their own content into DocumentRoot
 ONBUILD COPY src/ ${DOCROOT}/
